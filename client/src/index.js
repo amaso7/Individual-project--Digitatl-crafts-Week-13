@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import DrListPage from './DrListPage';
+import DrListPage from '../src/components/DrListPage.js';
 import reportWebVitals from './reportWebVitals';
+import PtPortal from './components/PtPortal';
 
 ReactDOM.render(
   <React.StrictMode>
     <DrListPage />
+    <PtPortal/>
   </React.StrictMode>,
   document.getElementById('root')
 );

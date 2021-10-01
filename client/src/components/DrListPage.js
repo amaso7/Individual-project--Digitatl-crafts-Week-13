@@ -1,5 +1,5 @@
 
-import './App.css';
+import '../App.css';
 import {useEffect, useState } from 'react'
 
 function DrListPage(props) {
@@ -21,14 +21,11 @@ function DrListPage(props) {
     <div className="App">
       <header className="App-header">
         <p>Azure for Health and Human Services LLC. Dr./Patient Portal</p>
-        <img src="https://findicons.com/files/icons/2837/health/128/doctor_icon.png"/>        
-        <button className = "buttonpt">Patient Portal</button>
+        <img src="https://findicons.com/files/icons/2837/health/128/doctor_icon.png"/>  
         <button className = "buttondr">Doctor Login</button>
       </header>
 
-      <ul> 
-        {drItems}
-      </ul>
+
     </div>
   )
 }

@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const models = require('./models')
 const cors = require('cors')
-
+app.use(express.json())
 
 app.use(cors())
 /*
@@ -24,7 +24,25 @@ app.get('/api/Drs', (req, res) => {
         res.json(drs)
     })
 })
+app.post('/api/pts', (req, res)=>{
+    const name = req.body.name
+    const bithday = req.body.bithday
+    const provider = req.body.provider
+    const msg = req.body.msg
 
+    const pt = models.Pts.build({
+        name: name,
+        bithday: bithday,
+        provider: provider,
+        msg: msg
+    })
+
+    pt.save()
+    .then(savedPt => {
+        res.json({success: true, savedPt})
+    })
+
+})
 //local host 5000
 app.listen(5000, (req, res) => {
     console.log('Server is running...')

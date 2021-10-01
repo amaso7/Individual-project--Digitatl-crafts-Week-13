@@ -3,9 +3,15 @@ import {useEffect, useState } from 'react'
 
 function PtPortal() {
     const [pt, setPt] = useState({})
+    
     const handlePtChange = (e) => {
         console.log(e.target.name, e.target.value)
     }
+
+        setPt({
+            [e.target.name]: e.target.value+
+        
+        })
 /*
   const ptItems = pts.map(pt =>{
     return <li key = {pt.id}>{pt.bithday, pt.name, pt.msg}</li>

@@ -11,10 +11,22 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      bithdate: {
-        type: Sequelize.STRING
+      dob: {
+        type: Sequelize.DATE
       },
       provider: {
+        type: Sequelize.STRING
+      },
+      prevappt: {
+        type: Sequelize.DATE
+      },
+      nextappt: {
+        type: Sequelize.DATE
+      },
+      meds: {
+        type: Sequelize.STRING
+      },
+      num: {
         type: Sequelize.STRING
       },
       msg: {

@@ -7,20 +7,16 @@ const db = require('./models')
 app.use(cors())
 const router=express.Router()
 const bcrypt = require('bcrypt')
-const authenticate=require('../server2/authentication/authenticate')
+
+app.use(express.urlencoded())
+const PORT = process.env.PORT || 80
 
 /*
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://fxyqgzxg:i66ItBKFaiFO581GDTU_YGxpIDwbjsRQ@fanny.db.elephantsql.com/fxyqgzxg'
-
-const db = pgp(connectionString)
-app.get('/hello', (req, res) => {
-    res.send('Hello ')
-})
-app.get('/api/drs-with-pg-promise', (req, res) =>{
-
-})
 */
+
+
 
 app.post('/api/Pts', (req, res)=>{
     const name = req.body.name
@@ -89,20 +85,16 @@ router.post('/login',(req,res)=>{
                 console.log("User successfully logged in! On user homepage")
                 res.redirect('/users/home')
             }else{
-                //render the login/create account page with error message
-                console.log("Invalid username or password! Reload login page")
-                res.render('login',{message:'Invalid username or password!'})
+                
+                console.log("Invalid username or password")
+                res.render('login',{message:'Invalid username or password'})
             }
         })
     })
 })
-router.get('/logout', authenticate, (req, res) => {
-    req.session.destroy(function (error) {
-        res.clearCookie('connect.sid')
-        res.redirect('/')
-    })
-})
+
+
 //local host 5000
-app.listen(5000, (req, res) => {
+app.listen(PORT, (req, res) => {
     console.log('Server is running...')
 })

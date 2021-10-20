@@ -1,6 +1,6 @@
 
 const initialState = {
-    pts: {} 
+    pts: []
 }
 
 const reducer = (state = initialState, action) => {

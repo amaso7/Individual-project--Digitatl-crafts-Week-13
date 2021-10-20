@@ -1,7 +1,7 @@
 
 import '../App.css';
 import {useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import { fetchPts } from '../store/creators/actionCreators';
 
 function DrListPage(props) {
 
@@ -16,11 +16,9 @@ function DrListPage(props) {
       props.onPtsLoaded(pts)
     })
   }, [])
-/*
-  const ptItems = pts.map(pt =>{
-    return <li key = {pt.id}>{pt.ptName}</li>
-  })
-*/
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,5 +33,4 @@ function DrListPage(props) {
     </div>
   )
 }
-
 export default DrListPage;

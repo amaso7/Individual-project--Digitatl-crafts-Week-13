@@ -1,10 +1,11 @@
 
 export const fetchPts = () => {
-    return (dispatch) => {
-        fetch('http://localhost:5000/api/Pts')
+    return () => {
+        fetch('http://localhost:5000/api/pts')
         .then(response => response.json())
         .then(pts => {
-            dispatch({type: 'Pts_LOADED', payload: pts})
+            return (pts.payload)
+            //dispatch({type: 'PTS_LOADED', payload: pts})
         })
     }
 }

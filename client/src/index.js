@@ -9,7 +9,12 @@ import { Provider } from 'react-redux'
 import reducer from './store/reducer'
 import thunk from 'redux-thunk'
 import { fetchPts } from './store/creators/actionCreators';
-
+import About from './About'
+import { Route } from 'react-router';
+import { Switch } from 'react-router';
+import App from './app';
+import { BrowserRouter } from 'react-router-dom';
+import DrListPage from './components/DrListPage';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose
 
 const store = createStore(reducer, composeEnhancers(
@@ -18,11 +23,18 @@ const store = createStore(reducer, composeEnhancers(
 
 ReactDOM.render(
   <React.StrictMode>
-      <Provider store = {store}>
-        <PtPortal/>
-      </Provider>
+    <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={App}/>
+          <Route exact path = './DrListPage'component = {DrPage}/>
+          <Route exact path='/PtPortal' component={PtPortal}/>
+          
+      </Switch>
+    </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

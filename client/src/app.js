@@ -3,13 +3,18 @@ import Nav from './Menu'
 import About from './About'
 import DrPortal from './DrPortal'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {viewAllpts} from './components/DrListPage'
+import DrListPage, {viewAllpts} from './components/DrListPage'
+
+import Home from './components/Home'
 function App() {
     return(
         <Router>
             <div>
-                
-                <viewAllpts/>
+                 
+                <Switch>
+                <Route path="/DrListPage" component={DrListPage} />
+                <Home/>
+                </Switch>
             <DrPortal/>       
             <Route path= " /about"/>
             <footer>Developed by Saad Hindash</footer>

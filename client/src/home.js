@@ -5,7 +5,7 @@ import App from './app';
 function home(props) {
     return (
         <nav>
-            <h3>Homr'</h3>
+            <h3>Home</h3>
                 <ul>
                     <li>about pg</li>
                 </ul>

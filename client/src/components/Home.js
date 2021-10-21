@@ -1,17 +1,22 @@
 import React from "react";
-import "../CSS/Home.css";
+
+import { fetchPts } from "../store/creators/actionCreators";
+import DrListPage from "./DrListPage";
 
 import PtPortal from "./PtPortal";
 
 const Home = (props) => {
     return (
-      <div className="homepage-container">
-        <div className="imageDiv">
-        <PtPortal/>
-        </div>
-        {/* <div id="aboutUs" className="aboutUs"></div> */}
+      <div className="App">
+        <header className="App-header">
+          <p>Azure for Health and Human Services LLC. Dr./Patient Portal</p>
+            <img src="https://findicons.com/files/icons/2837/health/128/doctor_icon.png" alt= ""/>
+        </header>
       </div>
     );
+
+ 
+  
   };
   
   

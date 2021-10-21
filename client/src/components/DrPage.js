@@ -7,7 +7,7 @@ import PtPortal from './PtPortal';
 function DrPage(props) {
 
    const viewAllpts = (pt) => {
-    fetch(`http://localhost:5000/api/pts/`, {
+    fetch(`http://localhost:PORT/api/pts/`, {
          method: 'GET'
        }).then(response => response.json())
        .then(res => { 
@@ -16,13 +16,15 @@ function DrPage(props) {
        })
        
    }
-
+   
 
    return (
-     <ul>
-       <viewAllpts/>
-       <PtPortal/>
-     </ul>
+     <nav>
+      <ul>
+        <viewAllpts/>
+        <PtPortal/>
+      </ul>
+     </nav>
    )
 }
   

@@ -5,7 +5,7 @@ import App from './app';
 function DrPortal() {
     return (
         <nav>
-            <input type="textbox" placeholder="username">About</h3>
+            <input type="textbox" placeholder="username">About</input>
                 <ul>
                     <li>about pg</li>
                 </ul>

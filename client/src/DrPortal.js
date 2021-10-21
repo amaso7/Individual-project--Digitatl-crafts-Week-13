@@ -8,7 +8,8 @@ function DrPortal() {
     return (
         <Nav>
             <h3>About</h3>
-            <button link to= "rcopia.com">rcopia login </button>
+            <button type= 'buttondr'link= "rcopia.com">rcopia login </button>
+            <button href="rcopia.com"></button>
                 <ul>
                     
                     <button>button</button>

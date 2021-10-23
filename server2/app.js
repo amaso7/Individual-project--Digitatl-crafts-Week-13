@@ -95,6 +95,6 @@ router.post('/login',(req,res)=>{
 
 
 //local host 5000
-app.listen(PORT, (req, res) => {
+app.listen(process.env.PORT|| 5000, () => {
     console.log('Server is running...')
 })

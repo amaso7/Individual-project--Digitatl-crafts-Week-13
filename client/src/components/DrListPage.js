@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) => {
 
   const mapStateToProps = (state) => {
     return {
-      pts: state.pts 
+      pts: state.pts  
     }
 }
 

@@ -1,19 +1,25 @@
-
 import '../App.css';
 import { connect } from 'react-redux'
 import { fetchPts } from '../store/creators/actionCreators';
 import * as actionCreators from '../store/creators/actionCreators'
-import { useEffect } from 'react';
+import { state,Component, useEffect } from 'react';
 import axios from "axios"
+import { useState } from 'react'
+import { render } from 'react-dom';
 
-function DrListPage() {
+function DrListPage(props) {
     
- /* const fetchPts = (pt) => {
-    return axios.get("http://localhost:PORT/api/pts/")
-          .then((response) => console.log(response.data));}*/
-
-  
-
+  const Pts = (Pt) => {
+    fetch(`https://http://localhost:5000/api/pts/`, {
+         method: 'GET'
+       }).then(response => response.json())
+       .then(res => { 
+         props.onPtsLoaded()
+       })
+       
+   }
+   
+          
   return (
     <div className="App">
       <header className="App-header">
@@ -24,9 +30,8 @@ function DrListPage() {
         <a className ="buttondr"href="https://rx7.drfirst.com/login.jsp"><button>Rx Portal </button></a>
         <a className ="hlink" href = '/'>Home</a>
         </body>
-      <p>{fetchPts}</p>
-      
-    
+        <h2>Patient Messages</h2>
+        <ul>{Pts.length}</ul>      
     </div>
   )
 }
@@ -39,5 +44,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
       pts: state.pts 
     }
-  }
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(DrListPage);
